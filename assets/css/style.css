@@ -1,0 +1,47 @@
+h1 {
+    text-align: center;
+}
+
+main {
+    border-radius: 5px;
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+    box-shadow: 5px 5px 5px 5px lightgrey;
+}
+
+h2 {
+    border-bottom: 2px solid lightgrey;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#password-box {
+    border: 2px dashed lightgrey;
+    padding: 10px 10px 60px 10px;
+}
+
+p {   
+    text-align: center;
+    color: lightgrey;
+}
+
+#new-password {
+    color: black;
+}
+
+#button-div {
+    border-top: 2px solid lightgrey;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 10px auto;
+    background-color: crimson;
+    border: none;
+    color: white;
+    border-radius: 22px;
+    padding: 10px;
+}
