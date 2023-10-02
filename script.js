@@ -1,7 +1,7 @@
 const upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 const lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 const specialCharacters = [' ','!','"','#','$','%','&',"'",'(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','/',']','^','_','`','{','|','}','~'];
-const numeric = ['0','1','2','3','4','5','6','7','8','9'];
+const numericCharacters = ['0','1','2','3','4','5','6','7','8','9'];
 
 //takes users criteria and passes into genPassword. concatenates all characters into array then randomly selects character based on length
 function genPassword (passLength, upper, lower, special, numeric) {
@@ -13,33 +13,33 @@ function genPassword (passLength, upper, lower, special, numeric) {
         alert("Your password needs to consist of something! Try again.");
     }
 
-    //(too) lengthy if/then block that determines all possibilities of which characters to use. (Can we do something more efficient to cover all possibilities... IDK?)
+    // (too) lengthy if/then block that determines all possibilities of which characters to use. (Can we do something more efficient to cover all possibilities... IDK?)
     //did I even cover all the cases? :0
-    if (upper && lower && special && numeric) {
-        allSelectedChars = upperCase.concat(lowerCase, specialCharacters, numeric);
-    } else if (upper && !lower && special && numeric) {
-        allSelectedChars = upperCase.concat(specialCharacters, numeric);
-    } else if (upper && !lower && !special && numeric) {
-        allSelectedChars = upperCase.concat(numeric);
-    } else if (upper && !lower && !special && !numeric) {
+    if (upper && lower && special && numericCharacters) {
+        allSelectedChars = upperCase.concat(lowerCase, specialCharacters, numericCharacters);
+    } else if (upper && !lower && special && numericCharacters) {
+        allSelectedChars = upperCase.concat(specialCharacters, numericCharacters);
+    } else if (upper && !lower && !special && numericCharacters) {
+        allSelectedChars = upperCase.concat(numericCharacters);
+    } else if (upper && !lower && !special && !numericCharacters) {
         allSelectedChars = upperCase;
-    } else if (upper && lower && !special && numeric) {
-        allSelectedChars = upperCase.concat(lowerCase, numeric);
-    } else if (upper && lower && special && !numeric) {
+    } else if (upper && lower && !special && numericCharacters) {
+        allSelectedChars = upperCase.concat(lowerCase, numericCharacters);
+    } else if (upper && lower && special && !numericCharacters) {
         allSelectedChars = upperCase.concat(lowerCase, specialCharacters);
-    } else if (upper && !lower && special && !numeric) {
+    } else if (upper && !lower && special && !numericCharacters) {
         allSelectedChars = upperCase.concat(specialCharacters);
-    } else if (!upper && lower && special && numeric) {
-        allSelectedChars = lowerCase.concat(specialCharacters, numeric);
-    } else if (!upper && !lower && special && numeric) {
-        allSelectedChars = specialCharacters.concat(numeric);
-    } else if (!upper && !lower && !special && numeric) {
-        allSelectedChars = numeric;
-    } else if (!upper && lower && !special && numeric) {
-        allSelectedChars = lowerCase.concat(numeric);
-    } else if (!upper && lower && special && !numeric) {
+    } else if (!upper && lower && special && numericCharacters) {
+        allSelectedChars = lowerCase.concat(specialCharacters, numericCharacters);
+    } else if (!upper && !lower && special && numericCharacters) {
+        allSelectedChars = specialCharacters.concat(numericCharacters);
+    } else if (!upper && !lower && !special && numericCharacters) {
+        allSelectedChars = numericCharacters;
+    } else if (!upper && lower && !special && numericCharacters) {
+        allSelectedChars = lowerCase.concat(numericCharacters);
+    } else if (!upper && lower && special && !numericCharacters) {
         allSelectedChars = lowerCase.concat(specialCharacters);
-    } else if (!upper && !lower && special && !numeric) {
+    } else if (!upper && !lower && special && !numericCharacters) {
         allSelectedChars = specialCharacters;
     }
     
